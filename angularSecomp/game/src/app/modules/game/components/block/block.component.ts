@@ -10,6 +10,9 @@ import { AuthenticateService } from 'src/app/shared/services/authenticate.servic
   styleUrls: ['./block.component.scss']
 })
 export class BlockComponent implements OnInit {
+  @Input() index: number;
+  @Input() value: string;
+  
   constructor() {}
 
   ngOnInit() {}
