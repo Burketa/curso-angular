@@ -32,7 +32,8 @@ export class AuthenticateService {
     return this.database.object(`users/${uid}`).update({
       user: uid,
       score: 0,
-      email
+      email,
+      isAvaibale: true
     });
   }
 

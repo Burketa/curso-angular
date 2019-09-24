@@ -56,4 +56,10 @@ export class GameService {
       .valueChanges()
       .pipe(map(users => users.sort((a, b) => (a.score > b.score ? 1 : -1))));
   }
+
+  updateUserWithCreatedGame(userId: string, gameId: string) {
+    return this.database
+      .object<Player>(`users/${userId}`)
+      .update({ gameId, isAvailable: false });
+  }
 }
